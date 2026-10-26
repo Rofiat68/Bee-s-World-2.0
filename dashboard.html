@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Bee's World</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <div class="dashboard-layout">
+
+<!-- MOBILE MENU BUTTON -->
+<button class="mobile-menu-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-bars"></i>
+    <span>Bee's World Menu</span>
+</button>
+
+        <!-- SIDEBAR -->
+  <aside class="sidebar" id="dashboard-sidebar">
+
+            <div class="dashboard-logo">
+                <i class="fa-solid fa-gem"></i>
+                <span>Bee's World.</span>
+            </div>
+
+            <p class="sidebar-heading">MAIN MENU</p>
+
+            <a href="#overview" class="sidebar-link active">
+                <i class="fa-solid fa-house"></i>
+                <span>Overview</span>
+            </a>
+
+            <a href="#profile" class="sidebar-link">
+                <i class="fa-solid fa-user"></i>
+                <span>My Profile</span>
+            </a>
+
+            <a href="#orders" class="sidebar-link">
+                <i class="fa-solid fa-box"></i>
+                <span>My Orders</span>
+            </a>
+
+            <a href="#wishlist" class="sidebar-link">
+                <i class="fa-solid fa-heart"></i>
+                <span>Wishlist</span>
+            </a>
+
+            <a href="cart.html" class="sidebar-link">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Shopping Cart</span>
+            </a>
+
+            <p class="sidebar-heading">ACCOUNT</p>
+
+            <a href="#settings" class="sidebar-link">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+            <a href="index.html" class="sidebar-link">
+                <i class="fa-solid fa-store"></i>
+                <span>Visit Store</span>
+            </a>
+
+            <button class="sidebar-logout" onclick="logoutUser()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </button>
+
+        </aside>
+
+        <!-- MAIN DASHBOARD -->
+        <main class="dashboard-main" id="overview">
+
+            <div class="dashboard-topbar">
+
+                <div>
+                    <p class="dashboard-small-title">CUSTOMER PORTAL</p>
+                    <h1>My Dashboard</h1>
+                </div>
+
+                <div class="dashboard-user">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <strong id="dashboard-user-name">Customer</strong>
+                        <p>Customer Account</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- WELCOME SECTION -->
+            <section class="welcome-card">
+
+                <div>
+                    <p>WELCOME TO BEE'S WORLD</p>
+
+                    <h2>Hello, <span id="welcome-name">Customer</span>!</h2>
+
+                    <p>
+                        Discover beautiful jewelry and find pieces
+                        that express your unique style.
+                    </p>
+
+                    <a href="index.html#products" class="dashboard-shop-btn">
+                        Explore Collection
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <i class="fa-solid fa-gem welcome-decoration"></i>
+
+            </section>
+
+            <!-- SUMMARY CARDS -->
+            <section class="summary-cards">
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <p>Total Orders</p>
+                    <h3 id="orders-count">0</h3>
+                    <span>Your order history</span>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <p>Wishlist Items</p>
+                    <h3 id="wishlist-count">0</h3>
+                    <span>Your favourite pieces</span>
+                </div>
+
+                <div class="summary-card">
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+
+                    <p>Cart Items</p>
+                    <h3 id="dashboard-cart-count">0</h3>
+                    <span>Items ready to review</span>
+                </div>
+
+            </section>
+
+            <!-- PROFILE -->
+            <section class="dashboard-panel" id="profile">
+
+                <div class="panel-heading">
+                    <h2>
+                        <i class="fa-solid fa-user"></i>
+                        My Profile
+                    </h2>
+
+                    <span>Account information</span>
+                </div>
+
+                <div class="profile-details">
+
+                    <div>
+                        <span>Email Address</span>
+                        <p id="dashboard-email">Not provided</p>
+                    </div>
+
+                    <div>
+                        <span>Account Type</span>
+                        <p>Customer</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- ORDERS -->
+            <section class="dashboard-panel" id="orders">
+
+                <div class="panel-heading">
+                    <h2>
+                        <i class="fa-solid fa-box"></i>
+                        Recent Orders
+                    </h2>
+                </div>
+
+                <p class="empty-message">
+                    You haven't placed any orders yet.
+                </p>
+
+                <a href="index.html#products" class="text-link">
+                    Start Shopping
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </section>
+
+            <!-- WISHLIST -->
+            <section class="dashboard-panel" id="wishlist">
+
+                <div class="panel-heading">
+                    <h2>
+                        <i class="fa-solid fa-heart"></i>
+                        My Wishlist
+                    </h2>
+                </div>
+
+                <p class="empty-message">
+                    Your favourite products will appear here.
+                </p>
+
+            </section>
+
+            <!-- SETTINGS -->
+            <section class="dashboard-panel" id="settings">
+
+                <div class="panel-heading">
+                    <h2>
+                        <i class="fa-solid fa-gear"></i>
+                        Settings
+                    </h2>
+                </div>
+
+                <p class="empty-message">
+                    Manage your demonstration account through this section.
+                </p>
+
+            </section>
+
+            <footer class="dashboard-footer">
+                &copy; 2026 Bee's World. All rights reserved.
+            </footer>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

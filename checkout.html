@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Bee's World</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .checkout-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+        }
+
+        .checkout-container h1 {
+            margin-bottom: 10px;
+        }
+
+        .checkout-form,
+        .checkout-summary {
+            background: #fff;
+            padding: 25px;
+            margin-top: 25px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+        }
+
+        .checkout-form label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .checkout-form input,
+        .checkout-form textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .checkout-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .checkout-summary p {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .checkout-summary .total {
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .checkout-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 20px;
+            background: #b38b18;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #8b6b12;
+            text-decoration: none;
+        }
+
+        .checkout-message {
+            display: none;
+            padding: 20px;
+            margin-top: 20px;
+            background: #f0f8e9;
+            border: 1px solid #9ac47a;
+            border-radius: 8px;
+            overflow-wrap: anywhere;
+        }
+
+        .checkout-message h2 {
+            color: #426b2a;
+        }
+
+        @media (max-width: 600px) {
+            .checkout-container {
+                margin: 20px auto;
+                padding: 15px;
+            }
+
+            .checkout-form,
+            .checkout-summary {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header style="background:#080808; color:#c5a12c; padding:22px;">
+        <h2>💎 Bee's World</h2>
+    </header>
+
+    <main class="checkout-container">
+
+        <p>YOUR SHOPPING BAG</p>
+        <h1>Checkout</h1>
+        <p>Enter your details to complete your demonstration order.</p>
+
+        <section class="checkout-summary">
+            <h2>Order Summary</h2>
+
+            <div id="checkout-items">
+                Loading your items...
+            </div>
+
+            <p class="total">
+                <span>Total</span>
+                <span id="checkout-total">₦0</span>
+            </p>
+        </section>
+
+        <form id="checkout-form" class="checkout-form">
+
+            <h2>Customer Information</h2>
+
+            <label for="customer-name">Full Name</label>
+            <input
+                type="text"
+                id="customer-name"
+                required
+                autocomplete="name"
+            >
+
+            <label for="customer-email">Email Address</label>
+            <input
+                type="email"
+                id="customer-email"
+                required
+                autocomplete="email"
+            >
+
+            <label for="customer-phone">Phone Number</label>
+            <input
+                type="tel"
+                id="customer-phone"
+                required
+                autocomplete="tel"
+            >
+
+            <label for="customer-address">Delivery Address</label>
+            <textarea
+                id="customer-address"
+                required
+                autocomplete="street-address"
+            ></textarea>
+
+            <button type="submit" class="checkout-button">
+                Place Demonstration Order
+            </button>
+
+        </form>
+
+        <section id="checkout-message" class="checkout-message"
+            aria-live="polite">
+        </section>
+
+        <a href="cart.html" class="back-link">
+            ← Return to Shopping Cart
+        </a>
+
+    </main>
+
+    <script>
+        const checkoutItems =
+            document.getElementById("checkout-items");
+
+        const checkoutTotal =
+            document.getElementById("checkout-total");
+
+        const checkoutForm =
+            document.getElementById("checkout-form");
+
+        const checkoutMessage =
+            document.getElementById("checkout-message");
+
+        function getCart() {
+            try {
+                const savedCart =
+                    JSON.parse(localStorage.getItem("beeCart")) || [];
+
+                return Array.isArray(savedCart) ? savedCart : [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        function formatNaira(amount) {
+            return "₦" + Number(amount).toLocaleString("en-NG");
+        }
+
+        function displayCheckoutItems() {
+            const cart = getCart();
+            checkoutItems.innerHTML = "";
+
+            if (cart.length === 0) {
+                checkoutItems.textContent = "Your cart is empty.";
+
+                checkoutTotal.textContent = formatNaira(0);
+
+                checkoutForm.hidden = true;
+
+                return;
+            }
+
+            let total = 0;
+
+            cart.forEach(function(item) {
+                const row = document.createElement("p");
+                const name = document.createElement("span");
+                const price = document.createElement("span");
+
+                name.textContent = item.name;
+                price.textContent = formatNaira(item.price);
+
+                row.appendChild(name);
+                row.appendChild(price);
+
+                checkoutItems.appendChild(row);
+
+                total += Number(item.price) || 0;
+            });
+
+            checkoutTotal.textContent = formatNaira(total);
+        }
+
+        checkoutForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const cart = getCart();
+
+            if (cart.length === 0) {
+                alert("Your cart is empty. Please add a product first.");
+                return;
+            }
+
+            const customerName =
+                document.getElementById("customer-name").value.trim();
+
+            if (!customerName) {
+                alert("Please enter your full name.");
+                return;
+            }
+
+            const orderNumber =
+                "BEE-" + Date.now().toString().slice(-8);
+
+            checkoutMessage.replaceChildren();
+
+            const heading = document.createElement("h2");
+            heading.textContent = "Order Submitted Successfully!";
+
+            const greeting = document.createElement("p");
+            greeting.textContent =
+                "Thank you, " + customerName +
+                "! Your demonstration order number is " + orderNumber + ".";
+
+            const notice = document.createElement("p");
+            notice.textContent =
+                "This is a website demonstration. No real order was sent, " +
+                "no payment was taken, and no delivery has been arranged.";
+
+            checkoutMessage.appendChild(heading);
+            checkoutMessage.appendChild(greeting);
+            checkoutMessage.appendChild(notice);
+
+            checkoutMessage.style.display = "block";
+
+            checkoutForm.hidden = true;
+
+            checkoutMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+
+        displayCheckoutItems();
+    </script>
+
+</body>
+</html>

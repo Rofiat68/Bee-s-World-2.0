@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bee's World | Jewelry & Accessories</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="top-header">
+<div class="logo">Bee's <br>World</div>
+
+<a href="login.html" class="login-btn">
+<i class="fa-solid fa-user"></i> Login</a>
+
+<a href="cart.html" class="header-cart"><i class="fa-solid fa-cart-shopping"></i>Cart (<span id="cart-count">0</span>)
+</a>
+    </div>
+
+    <div class="social-icons">
+
+<a href="https://www.tiktok.com/" class="icon"><i class="fa-brands fa-tiktok"></i></a>
+
+<a href="https://www.instagram.com/" class="icon"><i class="fa-brands fa-instagram"></i></a>
+
+<a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook"></i></a>
+
+<a href="https://www.snapchat.com/" class="icon"><i class="fa-brands fa-snapchat"></i></a>
+
+<a href="https://telegram.com/" class="icon"><i class="fa-brands fa-telegram"></i></a>
+
+<a href="https://twitter.com/" class="icon"><i class="fa-brands fa-twitter"></i></a>
+
+<a href="https://youtube.com/" class="icon"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</header>
+
+	<nav>
+	<a href=""> Home</a>
+	<a href=""> About</a>
+	<a href=""> Service</a>
+	<a href=""> Contact</a>
+	</nav>
+	
+<section class="hero">
+
+<section class="hero" id="home">
+    <div class="hero-content">
+
+<p class="hero-tag">ELEGANCE IN EVERY DETAIL</p>
+
+<h1>Discover Your<span>Perfect Style.</span></h1>
+
+<p class="hero-description">Explore our beautiful collection of jewelry and accessories designed to make every moment special.</p>
+
+<a href="#products" class="shop-btn">
+SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
+
+<div class="hero-note"><i class="fa-solid fa-gem"></i>
+  Style. Elegance. Confidence.
+        </div>
+    </div>
+
+    <div class="hero-image">
+<img src="IMG_6001.JPG"alt="Elegant jewelry collection"> 
+<div class="image-label"><i class="fa-solid fa-star"></i>
+            YOUR STYLE, YOUR STORY
+        </div>
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>About Bee's World</h2>
+<p>At Bee's World, we believe that the right accessories make every look special. Explore our collection and find pieces that express your unique style.</p>
+</section>
+
+<section class="products" id="products">
+
+    <div class="section-heading">
+        <p class="section-tag">OUR COLLECTION</p>
+        <h2>Discover Our <span>Jewelry</span></h2>
+        <p>Beautiful pieces to complement your unique style.</p>
+    </div>
+
+    <div class="product-container">
+
+        <div class="product-card">
+ <div class="product-image">
+<img src="IMG_6000.JPG" alt="Elegant gold necklace">
+  <span class="product-label">POPULAR</span>
+            </div>
+
+        <div class="product-info">
+     <p class="product-category">NECKLACES</p>
+         <h3>Elegant Gold Necklace</h3>
+
+<div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>              
+ </div>
+
+<div class="product-bottom">
+<span class="product-price">₦8,000</span>
+<button onclick="addToCart('Elegant Gold Necklace', 8000)">
+<i class="fa-solid fa-cart-plus"></i>
+</button>
+</div>
+     </div>
+	    </div>
+
+     
+        <div class="product-card">
+ <div class="product-image">
+<img src="IMG_6002.JPG" alt="Beautiful earrings">
+            </div>
+
+            <div class="product-info"> <p class="product-category">EARRINGS</p>
+       <h3>Crystal Drop Earrings</h3>
+
+<div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+ </div>
+<div class="product-bottom"><span class="product-price">₦5,000</span>
+                    
+<button type="button" onclick="addToCart('Crystal Drop Earrings', 5000)">
+    <i class="fa-solid fa-cart-plus"></i>
+</button>
+                </div>
+            </div>
+
+        </div>
+
+<div class="product-card">
+   <div class="product-image">
+<img src="IMG_6003.JPG" alt="Elegant bracelet">
+            </div>
+
+     <div class="product-info">
+<p class="product-category">BRACELETS</p>
+   <h3>Classic Gold Bracelet</h3>
+
+<div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>               
+ </div>
+        <div class="product-bottom">
+      <span class="product-price">₦6,500</span>
+<button type="button" onclick="addToCart('Classic Gold Bracelet', 6500)">
+    <i class="fa-solid fa-cart-plus"></i>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+<img src="IMG_6004.JPG" alt="Elegant fashion ring">
+            </div>
+
+            <div class="product-info">
+                <p class="product-category">RINGS</p>
+                <h3>Luxury Fashion Ring</h3>
+
+<div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+               
+ </div>
+  <div class="product-bottom"><span class="product-price">₦4,500</span>
+<button onclick="addToCart('Luxury Fashion Ring', 4500)">
+<i class="fa-solid fa-cart-plus"></i>
+   </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+    <h2>Let's Connect!</h2>
+<p>Have questions about our products? We'd love to hear from you.</p>
+   
+ <button onclick="contactUs()">Contact Us</button>
+</section>
+
+<footer>
+ <p>&copy; 2026 Bee's World. All rights reserved.</p>
+</footer>
+
+<script src="./script.js"></script>
+</body>
+</html>

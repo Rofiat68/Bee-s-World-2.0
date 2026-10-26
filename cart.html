@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Bee's World</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="cart-page">
+
+    <header class="cart-header">
+
+        <a href="index.html" class="cart-logo">
+            <i class="fa-solid fa-gem"></i>
+            Bee's World.
+        </a>
+
+        <a href="index.html#products" class="continue-shopping">
+            <i class="fa-solid fa-arrow-left"></i>
+            Continue Shopping
+        </a>
+
+    </header>
+
+    <main class="cart-container">
+
+        <div class="cart-title">
+            <p>YOUR SHOPPING BAG</p>
+            <h1>My Shopping Cart</h1>
+            <span id="cart-items-count">0 items</span>
+        </div>
+
+<div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+                <span>Total Items</span>
+                <span id="summary-quantity">0</span>
+            </div>
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">₦0</span>
+            </div>
+
+            <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="cart-total">₦0</span>
+            </div>
+
+            <button class="checkout-btn" onclick="checkout()">
+                Proceed to Checkout
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <p class="demo-note">
+                Demonstration checkout — no real payment will be processed.
+            </p>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
