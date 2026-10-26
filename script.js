@@ -132,9 +132,13 @@ function shopNow() {
 
 // Contact button
 function contactUs() {
-    window.location.href = "index.html#contact";
+const options = document.getElementById(“contact-options”);
+
+if (options) {
+    options.classList.toggle("show");
 }
 
+}
 // Update the cart count when a page loads
 document.addEventListener("DOMContentLoaded", function () {
 

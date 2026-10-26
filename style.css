@@ -1359,3 +1359,73 @@ nav a:hover {
         font-size: 12px;
     }
 }
+
+/* BEE’S WORLD LUXURY FOOTER */
+footer {
+background: #111111;
+color: #f5f0e8;
+text-align: center;
+padding: 25px 15px;
+margin-top: 40px;
+border-top: 3px solid #c9a227;
+width: 100%;
+box-sizing: border-box;
+}
+
+footer p {
+margin: 0;
+font-size: 14px;
+line-height: 1.8;
+letter-spacing: 0.5px;
+}
+
+footer p::first-letter {
+color: #d4af37;
+}
+
+.contact-options {
+display: none;
+justify-content: center;
+align-items: center;
+gap: 15px;
+flex-wrap: wrap;
+margin-top: 20px;
+}
+
+.contact-options.show {
+display: flex;
+}
+
+.contact-options a {
+display: inline-block;
+background: #111111;
+color: #d4af37;
+border: 1px solid #d4af37;
+border-radius: 6px;
+padding: 12px 18px;
+text-decoration: none;
+transition: 0.3s ease;
+}
+
+.contact-options a:hover {
+background: #d4af37;
+color: #111111;
+}
+
+@media (max-width: 600px) {
+footer {
+padding: 22px 12px;
+}
+
+footer p {
+    font-size: 12px;
+}
+.contact-options {
+    flex-direction: column;
+}
+.contact-options a {
+    width: 80%;
+    text-align: center;
+}
+
+}
