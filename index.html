@@ -101,15 +101,22 @@ SHOP NOW <i class="fa-solid fa-arrow-right"></i></a>
  </div>
 
 <div class="product-bottom">
-<span class="product-price">₦8,000</span>
-<button onclick="addToCart('Elegant Gold Necklace', 8000)">
-<i class="fa-solid fa-cart-plus"></i>
-</button>
-</div>
-     </div>
-	    </div>
+    <span class="product-price">₦8,000</span>
+<div class="product-actions">
+    <button type="button"
+            onclick="addToWishlist('Elegant Gold Necklace', 8000)"
+            aria-label="Add Elegant Gold Necklace to wishlist">
+        <i class="fa-solid fa-heart"></i>
+    </button>
 
-     
+    <button type="button"
+            onclick="addToCart('Elegant Gold Necklace', 8000)"
+            aria-label="Add Elegant Gold Necklace to cart">
+        <i class="fa-solid fa-cart-plus"></i>
+    </button>
+</div>
+</div>
+    
         <div class="product-card">
  <div class="product-image">
 <img src="IMG_6002.JPG" alt="Beautiful earrings">
