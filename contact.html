@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bee's World</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .contact-page {
+            min-height: 100vh;
+            padding: 50px 20px;
+            background: #f8f6f1;
+        }
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        .contact-heading h1 {
+            color: #b8860b;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .contact-heading p {
+            color: #555;
+            font-size: 16px;
+        }
+        .contact-container {
+            max-width: 950px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 25px;
+        }
+        .contact-info,
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        .contact-info h2,
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .contact-info p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        .contact-info i {
+            color: #b8860b;
+            margin-right: 8px;
+        }
+        .whatsapp-button {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 13px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .whatsapp-button i {
+            color: white;
+        }
+        .contact-form label {
+            display: block;
+            margin: 14px 0 7px;
+            font-weight: bold;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+        .send-button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #b8860b;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .send-button:hover {
+            background: #222;
+        }
+        .back-home {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-home a {
+            color: #b8860b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        @media (max-width: 650px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-heading h1 {
+                font-size: 29px;
+            }
+            .contact-info,
+            .contact-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Bee's World</h2>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    <main class="contact-page">
+        <div class="contact-heading">
+            <h1>Contact Us</h1>
+            <p>We would love to hear from you. Let's connect!</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>
+                    Have a question about our jewelry and accessories?
+                    Send us a message or contact us directly on WhatsApp.
+                </p>
+                <p>
+                    <i class="fa-solid fa-gem"></i>
+                    Bee's World — Jewelry & Accessories
+                </p>
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    We welcome your questions and enquiries.
+                </p>
+                <a class="whatsapp-button"
+                   href="https://wa.me/2349028443894"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Chat with Us
+                </a>
+            </div>
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name"
+                           placeholder="Enter your name" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email"
+                           placeholder="Enter your email" required>
+                    <label for="message">Your Message</label>
+                    <textarea id="message"
+                              placeholder="Write your message here..."
+                              required></textarea>
+                    <button type="submit" class="send-button">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="back-home">
+            <a href="index.html">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </main>
+    <footer style="text-align:center; padding:20px; background:#222; color:white;">
+        &copy; 2026 Bee's World. All rights reserved.
+    </footer>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const whatsappMessage =
+                "Hello Bee's World!%0A%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Message: " + encodeURIComponent(message);
+            window.open(
+                "https://wa.me/2349028443894?text=" + whatsappMessage,
+                "_blank"
+            );
+        });
+    </script>
+</body>
+</html>
