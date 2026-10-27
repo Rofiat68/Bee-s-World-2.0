@@ -129,12 +129,16 @@ function showCart() {
 function shopNow() {
     window.location.href = "index.html#products";
 }
-// CONTACT BUTTON
+
+// Contact button
 function contactUs() {
     const options = document.getElementById("contact-options");
 
     if (options) {
-        options.classList.toggle("show");
+        options.style.display =
+            options.style.display === "flex" ? "none" : "flex";
+    } else {
+        alert("Contact options could not be found!");
     }
 }
 
@@ -248,4 +252,74 @@ document.addEventListener("DOMContentLoaded", function () {
 
     displayCart();
 
+});
+
+// BEE’S WORLD WISHLIST
+
+let wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+
+function saveWishlist() {
+localStorage.setItem(“beeWishlist”, JSON.stringify(wishlist));
+}
+
+function addToWishlist(name, price) {
+wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+
+const alreadyAdded = wishlist.some(function(item) {
+    return item.name === name;
+});
+if (alreadyAdded) {
+    alert(name + " is already in your wishlist!");
+    return;
+}
+wishlist.push({
+    name: name,
+    price: Number(price)
+});
+saveWishlist();
+alert(name + " has been added to your wishlist!");
+
+}
+
+function displayWishlist() {
+const container = document.getElementById(“wishlist-items”);
+
+if (!container) return;
+wishlist = JSON.parse(localStorage.getItem("beeWishlist")) || [];
+if (wishlist.length === 0) {
+    container.innerHTML = `
+        <p class="empty-message">
+            Your favourite products will appear here.
+        </p>
+    `;
+    return;
+}
+container.innerHTML = wishlist.map(function(item, index) {
+    return `
+        <div class="cart-item">
+            <div>
+                <h3>${item.name}</h3>
+                <p>₦${Number(item.price).toLocaleString("en-NG")}</p>
+            </div>
+            <button type="button" onclick="removeFromWishlist(${index})">
+                <i class="fa-solid fa-trash"></i> Remove
+            </button>
+            <button type="button" onclick="addToCart('${item.name.replace(/'/g, "\\'")}', ${Number(item.price)})">
+                <i class="fa-solid fa-cart-plus"></i> Add to Cart
+            </button>
+        </div>
+    `;
+}).join("");
+
+}
+
+function removeFromWishlist(index) {
+wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+wishlist.splice(index, 1);
+saveWishlist();
+displayWishlist();
+}
+
+document.addEventListener(“DOMContentLoaded”, function() {
+displayWishlist();
 });
