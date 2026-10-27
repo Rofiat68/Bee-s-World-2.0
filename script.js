@@ -129,16 +129,15 @@ function showCart() {
 function shopNow() {
     window.location.href = "index.html#products";
 }
-
-// Contact button
+// CONTACT BUTTON
 function contactUs() {
-const options = document.getElementById(“contact-options”);
+    const options = document.getElementById("contact-options");
 
-if (options) {
-    options.classList.toggle("show");
+    if (options) {
+        options.classList.toggle("show");
+    }
 }
 
-}
 // Update the cart count when a page loads
 document.addEventListener("DOMContentLoaded", function () {
 
