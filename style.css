@@ -1450,3 +1450,20 @@ footer p {
     width: 100%;
     box-sizing: border-box;
 }
+.footer-login {
+    margin-top: 12px;
+}
+.footer-login a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+.footer-login a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.footer-login i {
+    color: #d4af37;
+    margin-right: 5px;
+}
