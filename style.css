@@ -18,7 +18,9 @@ body {
 header {
     background-color: #111;
     color: white;
-    padding: 15px 5%;
+    padding: 15px 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* TOP HEADER */
@@ -26,8 +28,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-	 gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* LOGO */
@@ -60,7 +65,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 8px;
     padding: 10px 5px;
     position: relative;
     background-color: black;
