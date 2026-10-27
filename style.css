@@ -1467,3 +1467,36 @@ footer p {
     color: #d4af37;
     margin-right: 5px;
 }
+/* MOBILE NAVIGATION FIX */
+header {
+    width: 100%;
+    box-sizing: border-box;
+}
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+nav a {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 8px 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+    header {
+        padding: 15px 8px;
+    }
+    nav {
+        gap: 5px;
+    }
+    nav a {
+        padding: 8px 6px;
+        font-size: 13px;
+    }
+}
