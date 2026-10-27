@@ -273,3 +273,22 @@ document.addEventListener("DOMContentLoaded", function () {
     displayCart();
 
 });
+
+// MY ACCOUNT NAVIGATION
+document.addEventListener("DOMContentLoaded", function () {
+    const accountLink = document.getElementById("account-link");
+
+    if (accountLink) {
+        accountLink.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const loggedInEmail = sessionStorage.getItem("beeUserEmail");
+
+            if (loggedInEmail) {
+                window.location.href = "dashboard.html";
+            } else {
+                window.location.href = "login.html";
+            }
+        });
+    }
+});
