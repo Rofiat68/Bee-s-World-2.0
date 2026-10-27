@@ -323,3 +323,5 @@ displayWishlist();
 document.addEventListener(“DOMContentLoaded”, function() {
 displayWishlist();
 });
+
+window.contactUs = contactUs;
