@@ -324,4 +324,5 @@ document.addEventListener(“DOMContentLoaded”, function() {
 displayWishlist();
 });
 
+window.addToCart = addToCart;
 window.contactUs = contactUs;
