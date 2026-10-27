@@ -207,37 +207,54 @@
 
             </section>
 
-            <!-- WISHLIST -->
-            <section class="dashboard-panel" id="wishlist">
+<!-- WISHLIST -->
+<section class="dashboard-panel" id="wishlist">
+<div class="panel-heading">
+    <h2>
+        <i class="fa-solid fa-heart"></i>
+        My Wishlist
+    </h2>
+</div>
 
-                <div class="panel-heading">
-                    <h2>
-                        <i class="fa-solid fa-heart"></i>
-                        My Wishlist
-                    </h2>
-                </div>
+<div id="wishlist-items">
+    <p class="empty-message">
+        Your favourite products will appear here.
+    </p>
+</div>
+</section>
 
-                <p class="empty-message">
-                    Your favourite products will appear here.
-                </p>
+<!-- SETTINGS -->
+<section class="dashboard-panel" id="settings">
+<div class="panel-heading">
+    <h2>
+        <i class="fa-solid fa-gear"></i>
+        Settings
+    </h2>
+</div>
 
-            </section>
+<div class="settings-content">
 
-            <!-- SETTINGS -->
-            <section class="dashboard-panel" id="settings">
+    <h3>Account Information</h3>
 
-                <div class="panel-heading">
-                    <h2>
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </h2>
-                </div>
+    <p>
+        <strong>Email:</strong>
+        <span id="settings-email">Demo account</span>
+    </p>
 
-                <p class="empty-message">
-                    Manage your demonstration account through this section.
-                </p>
+    <hr>
 
-            </section>
+    <h3>Account Actions</h3>
+
+    <p>Manage your Bee's World demonstration account.</p>
+
+    <button type="button" onclick="logoutUser()" class="settings-btn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Log Out
+    </button>
+
+</div>
+</section>
+
 
             <footer class="dashboard-footer">
                 &copy; 2026 Bee's World. All rights reserved.
