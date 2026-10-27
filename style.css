@@ -1399,10 +1399,10 @@ footer {
     margin-left: 0;
     margin-right: 0;
     border-top: 3px solid #d4af37;
+    border-radius: 15px 15px 0 0;
     width: 100%;
     box-sizing: border-box;
 }
-
 footer p {
     margin: 0;
     font-size: 14px;
