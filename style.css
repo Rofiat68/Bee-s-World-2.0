@@ -8,10 +8,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* BODY */
 body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     font-family: Arial, sans-serif;
     background-color: #fdfaf4;
     color: #222;
+    box-sizing: border-box;
 }
 
 /* HEADER */
