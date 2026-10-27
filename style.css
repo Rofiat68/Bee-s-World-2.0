@@ -160,9 +160,9 @@ nav a:hover {
     }
 }
 .cart-btn {
-    padding: 10px 16px;
-    font-size: 13px;
-}
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 5px;
 }
 /* HERO SECTION */
 .hero {
@@ -177,7 +177,7 @@ nav a:hover {
 
 /* HERO TEXT */
 .hero-content {
-    flex: 1;
+    flex: 1; 
 }
 
 .hero-tag {
