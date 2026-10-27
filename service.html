@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Services | Bee's World</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        background: #f8f6f1;
+        color: #222;
+        font-family: Arial, sans-serif;
+    }
+    header {
+        background: #111;
+        color: #d4af37;
+        padding: 20px;
+        text-align: center;
+    }
+    header h1 {
+        margin: 0 0 15px;
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 22px;
+    }
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    nav a:hover {
+        color: #d4af37;
+    }
+    .service-hero {
+        background: #e9e2d4;
+        padding: 55px 20px;
+        text-align: center;
+    }
+    .service-hero h2 {
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+    .service-hero p {
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.8;
+    }
+    .section-title {
+        text-align: center;
+        margin: 45px 15px 10px;
+        font-size: 28px;
+    }
+    .section-description {
+        text-align: center;
+        margin: 10px 15px 30px;
+        color: #666;
+    }
+    .product-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+        max-width: 1200px;
+        margin: 30px auto 55px;
+        padding: 0 20px;
+    }
+    .product-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        padding-bottom: 22px;
+    }
+    .product-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+    }
+    .product-card h3 {
+        font-size: 17px;
+        margin: 18px 8px 10px;
+    }
+    .product-price {
+        color: #a58218;
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 18px;
+    }
+    .add-cart-btn {
+        background: #111;
+        color: #d4af37;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .add-cart-btn:hover {
+        background: #d4af37;
+        color: #111;
+    }
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        max-width: 1050px;
+        margin: 30px auto 55px;
+        padding: 0 20px;
+    }
+    .service-box {
+        background: white;
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+    .service-box i {
+        font-size: 32px;
+        color: #b18b24;
+        margin-bottom: 15px;
+    }
+    .service-box h3 {
+        margin-bottom: 12px;
+    }
+    .service-box p {
+        line-height: 1.7;
+        color: #555;
+    }
+    .shop-section {
+        background: #171717;
+        color: white;
+        text-align: center;
+        padding: 45px 20px;
+    }
+    .shop-section h2 {
+        color: #d4af37;
+    }
+    .shop-section p {
+        line-height: 1.7;
+    }
+    .shop-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 13px 25px;
+        background: #d4af37;
+        color: #111;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 14px;
+    }
+    @media (max-width: 850px) {
+        .product-container {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .services-container {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @media (max-width: 480px) {
+        .product-container {
+            gap: 12px;
+            padding: 0 12px;
+        }
+        .product-card img {
+            height: 165px;
+        }
+        .product-card h3 {
+            font-size: 14px;
+        }
+        .add-cart-btn {
+            padding: 10px;
+            font-size: 12px;
+        }
+        .services-container {
+            grid-template-columns: 1fr;
+        }
+        .service-hero h2 {
+            font-size: 27px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Bee's World</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="service.html">Service</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping"></i> Cart
+        </a>
+    </nav>
+</header>
+<main>
+    <section class="service-hero">
+        <h2>Elegance in Every Detail</h2>
+        <p>
+            Welcome to Bee's World, your destination for beautiful
+            jewelry and stylish accessories. Discover elegant pieces
+            that complement your style and make every occasion special.
+        </p>
+    </section>
+    <section id="jewelry">
+        <h2 class="section-title">Our Jewelry Collection</h2>
+        <p class="section-description">
+            Explore our collection and find your favourite pieces.
+        </p>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="IMG_6000.JPG" alt="Elegant gold necklace">
+                <h3>Elegant Gold Necklace</h3>
+                <p class="product-price">₦8,000</p>
+                <button class="add-cart-btn" type="button"
+                    onclick="addToCart('Elegant Gold Necklace', 8000)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+            <div class="product-card">
+                <img src="IMG_6002.JPG" alt="Beautiful earrings">
+                <h3>Crystal Drop Earrings</h3>
+                <p class="product-price">₦5,000</p>
+                <button class="add-cart-btn" type="button"
+                    onclick="addToCart('Crystal Drop Earrings', 5000)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+            <div class="product-card">
+                <img src="IMG_6003.JPG" alt="Elegant bracelet">
+                <h3>Classic Gold Bracelet</h3>
+                <p class="product-price">₦6,500</p>
+                <button class="add-cart-btn" type="button"
+                    onclick="addToCart('Classic Gold Bracelet', 6500)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+            <div class="product-card">
+                <img src="IMG_6004.JPG" alt="Elegant fashion ring">
+                <h3>Luxury Fashion Ring</h3>
+                <p class="product-price">₦4,500</p>
+                <button class="add-cart-btn" type="button"
+                    onclick="addToCart('Luxury Fashion Ring', 4500)">
+                    <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="our-services">
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-description">
+            Beautiful accessories to complement your lifestyle.
+        </p>
+        <div class="services-container">
+            <div class="service-box">
+                <i class="fa-solid fa-gem"></i>
+                <h3>Jewelry Sales</h3>
+                <p>
+                    Discover necklaces, earrings, bracelets and rings
+                    selected to add elegance to your appearance.
+                </p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-shirt"></i>
+                <h3>Style and Elegance</h3>
+                <p>
+                    Find accessories that complement your outfits
+                    for everyday wear, celebrations and special events.
+                </p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-gift"></i>
+                <h3>Gift Ideas</h3>
+                <p>
+                    Explore beautiful jewelry pieces that can make
+                    thoughtful gifts for people you care about.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="shop-section">
+        <h2>Find Your Perfect Piece</h2>
+        <p>
+            Add a touch of elegance to your collection with
+            Bee's World jewelry and accessories.
+        </p>
+        <a href="#jewelry" class="shop-btn">Shop Now</a>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2026 Bee's World. All rights reserved.</p>
+</footer>
+<script src="./script.js" defer></script>
+</body>
+</html>
