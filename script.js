@@ -256,14 +256,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // BEE’S WORLD WISHLIST
 
-let wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+let wishlist = JSON.parse(localStorage.getItem("beeWishlist")) || [];
 
 function saveWishlist() {
-localStorage.setItem(“beeWishlist”, JSON.stringify(wishlist));
+localStorage.setItem("beeWishlist", JSON.stringify(wishlist));
 }
 
 function addToWishlist(name, price) {
-wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+wishlist = JSON.parse(localStorage.getItem("beeWishlist")) || [];
 
 const alreadyAdded = wishlist.some(function(item) {
     return item.name === name;
@@ -282,7 +282,7 @@ alert(name + " has been added to your wishlist!");
 }
 
 function displayWishlist() {
-const container = document.getElementById(“wishlist-items”);
+const container = document.getElementById("wishlist-items");
 
 if (!container) return;
 wishlist = JSON.parse(localStorage.getItem("beeWishlist")) || [];
@@ -314,13 +314,13 @@ container.innerHTML = wishlist.map(function(item, index) {
 }
 
 function removeFromWishlist(index) {
-wishlist = JSON.parse(localStorage.getItem(“beeWishlist”)) || [];
+wishlist = JSON.parse(localStorage.getItem("beeWishlist")) || [];
 wishlist.splice(index, 1);
 saveWishlist();
 displayWishlist();
 }
 
-document.addEventListener(“DOMContentLoaded”, function() {
+document.addEventListener("DOMContentLoaded", function() {
 displayWishlist();
 });
 
