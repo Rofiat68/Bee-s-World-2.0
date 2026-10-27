@@ -1529,3 +1529,38 @@ nav a {
         font-size: 13px;
     }
 }
+/* LOGIN BOX ABOVE FOOTER */
+.footer-login {
+    background: #111111;
+    color: #d4af37;
+    text-align: center;
+    padding: 18px;
+    margin: 30px 15px;
+    border: 1px solid #d4af37;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.footer-login i {
+    color: #d4af37;
+    margin-right: 8px;
+}
+
+.footer-login a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-login a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .footer-login {
+        margin: 25px 12px;
+        padding: 16px 10px;
+    }
+}
