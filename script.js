@@ -21,7 +21,7 @@ if (loginForm) {
     loginForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const email = document.getElementById("email").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
         const password = document.getElementById("password").value;
 
         if (email === "" || password === "") {
@@ -29,7 +29,27 @@ if (loginForm) {
             return;
         }
 
-        // DEMONSTRATION LOGIN ONLY
+        // GET REGISTERED USER
+        const savedUser = localStorage.getItem("beeUser");
+
+        if (!savedUser) {
+            alert("You don't have an account yet. Please register first.");
+            window.location.href = "register.html";
+            return;
+        }
+
+        const user = JSON.parse(savedUser);
+
+        // CHECK EMAIL AND PASSWORD
+        if (
+            email !== user.email.toLowerCase() ||
+            password !== user.password
+        ) {
+            alert("Incorrect email or password. Please try again.");
+            return;
+        }
+
+        // LOGIN SUCCESSFUL
         sessionStorage.setItem("beeUserEmail", email);
 
         alert("Login successful! Welcome to Bee's World.");
